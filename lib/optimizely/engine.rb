@@ -96,7 +96,8 @@ module Optimizely
 		def results(id)
 			@url = "experiments/#{id}/results"
 			raise OptimizelyError::NoExperimentID, "An Experiment ID is required to retrieve the experiment." if id.nil?
-			if @results.nil?
+
+      if @results.nil?
 				response = self.get(@url)
         @results = response.collect { |response_json| Result.new(response_json) }
 			end
