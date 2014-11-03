@@ -172,7 +172,7 @@ module Optimizely
 
 		# Return the parsed JSON data for a request that is done to the Optimizely REST API.
 	  def get(url)
-	  	uri 		 = URI.parse("#{BASE_URL}#{url}/")
+	  	uri 		 = URI.parse("#{BASE_URL}#{url}")
 	  	https    = Net::HTTP.new(uri.host, uri.port)
 	  	https.read_timeout = @options[:timeout] if @options[:timeout]
 	  	https.verify_mode = OpenSSL::SSL::VERIFY_NONE
